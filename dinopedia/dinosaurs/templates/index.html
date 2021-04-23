@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinopedia</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <div class="dino-gallery-container">
+
+    {% for dinosaur in dinosaurs %}
+    <div class="card">
+      <div class="dino-info">
+        <h2>{{dinosaur.name}}</h2>
+        <p>{{dinosaur.description}}</p>
+      </div>
+      <div class="dino-photo">
+        <img src="{{dinosaur.photo}}" alt="{{dinousaur.name}}" />
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

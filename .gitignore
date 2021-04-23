@@ -1,0 +1,4 @@
+__pycache__
+dinopedia/static/img/*
+db.sqlite3
+myvenv
