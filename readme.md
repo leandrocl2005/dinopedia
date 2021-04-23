@@ -46,12 +46,12 @@ python manage.py createsuperuser
 
 - Criar serializers em _dinosaurs/serializers.py_
 - Criar view para **Listar** dinossauros
-- Criar url em _core/urls.py_ para acessar a view criada
+- Criar url em _dinopedia/urls.py_ para acessar a view criada
 - Para testar digitar `python manage.py runserver` no terminal e, depois no navegador de internet, digitar _http://localhost:8000/api/dinosaurs_
 
 ## Renderizando arquivos estáticos em desenvolvimento
 
-- No arquivo _core/urls.py_ adicione:
+- No arquivo _dinopedia/urls.py_ adicione:
 
 ```python
 from django.conf import settings
@@ -60,7 +60,7 @@ from django.conf.urls.static import static
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ```
 
-- No arquivo _core/settings.py_ adicione:
+- No arquivo _dinopedia/settings.py_ adicione:
 
 ```python
 import os
@@ -77,7 +77,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 - Criar template (HTML + jinja) em _dinousaurs/templates/index.html_
 - Criar estilos em _static/css/styles.css_
 - Criar scripts em _static/js/custom.js_
-- Criar url para esta view em _core/urls.py_
+- Criar url para esta view em _dinopedia/urls.py_
 
 ## Deploy on Heroku
 
@@ -141,6 +141,23 @@ from cloudinary.models import CloudinaryField
 <h1 align="center">
   <img alt="api demo" src="./api_presentation.jpg" width="600px"/>
 </h1>
+
+### Como rodar esse código na sua máquina
+
+```bash
+git clone
+cd dinopedia
+code .
+python3 -m venv myvenv
+. myvenv/Scripts/activate
+pip install -r requirements.txt
+cd dinopedia
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+- Para testar digitar `python manage.py runserver` no terminal e, depois no navegador de internet, digitar _http://localhost:8000/admin_. Cadastre alguns dinossauros. Depois vá para _http://localhost:8000/_.
 
 ## Referências
 
